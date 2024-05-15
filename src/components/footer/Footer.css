@@ -1,0 +1,83 @@
+.footer .first {
+  max-width: 186px;
+  text-align: center;
+}
+.footer {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.footer .first p {
+  font-family: Inter;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 16.94px;
+  text-align: start;
+  color: #000;
+}
+
+.footer ul {
+  list-style: none;
+}
+.footer ul h4 {
+  font-family: Inter;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 19.36px;
+  text-align: left;
+  color: #000;
+  margin-bottom: 30px;
+}
+.footer ul li {
+  font-family: Inter;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 16.94px;
+  text-align: justified;
+  color: #000;
+  cursor: pointer;
+  margin-bottom: 10px;
+}
+
+.footer__links {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+.footer__links a {
+  color: #000;
+  text-decoration: none;
+
+  svg {
+    font-size: 40px;
+  }
+}
+
+.footer__links .icon {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+#footer {
+  background: #fff;
+  padding: 60px 0;
+}
+
+@media screen and (max-width: 700px) {
+  .what__for .wrapper {
+    display: flex;
+    flex-direction: column;
+  }
+  .what__for .wrapper .card h3 {
+    font-size: 32px !important;
+    line-height: 40px !important;
+  }
+  .what__for .wrapper .card p {
+    font-size: 14px !important;
+    line-height: 20px !important;
+  }
+}

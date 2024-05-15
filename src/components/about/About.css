@@ -1,0 +1,64 @@
+@import url("https://fonts.googleapis.com/css2?family=Lalezar&display=swap");
+#about {
+  margin: 80px 0;
+}
+.about {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.about .hr {
+  width: 23px;
+  height: 79px;
+  border-radius: 10px;
+  background: #ff0404;
+}
+.about h4 {
+  font-family: Inter;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 21.78px;
+  text-align: center;
+  color: #000;
+  margin-top: 30px;
+  margin-bottom: 27px;
+}
+
+.about h2 {
+  font-family: Lalezar, sans-serif;
+  font-size: 48px;
+  font-weight: 400;
+  line-height: 60px;
+  text-align: center;
+  max-width: 910px;
+  color: #d62828;
+  text-align: center;
+}
+
+.about p {
+  font-family: Inter;
+  font-size: 15px;
+  font-weight: 300;
+  line-height: 19.36px;
+  text-align: center;
+  color: #000;
+  margin: 30px 0;
+}
+
+.about img {
+  width: 100%;
+  margin: 30px 0;
+}
+
+@media screen and (max-width: 700px) {
+  .about h2 {
+    font-size: 32px;
+    line-height: 40px;
+  }
+  .about p {
+    font-size: 14px;
+    line-height: 20px;
+    text-align: center;
+    margin: 20px 0;
+  }
+}
