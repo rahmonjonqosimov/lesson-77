@@ -1,12 +1,14 @@
 import { configureStore } from "@reduxjs/toolkit";
 import { api } from "./api";
 import countSlice from "./countSlice";
-// import heartSlice from "./heartSlice";
+import heartSlice from "./heartSlice";
+import cartSlice from "./cartSlice";
 
 export const store = configureStore({
   reducer: {
+    cart: cartSlice,
     count: countSlice,
-    // heart: heartSlice,
+    heart: heartSlice,
     [api.reducerPath]: api.reducer,
   },
   middleware: (getDefaultMiddleware) =>

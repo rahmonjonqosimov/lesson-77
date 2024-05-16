@@ -19,10 +19,16 @@
   gap: 30px;
   list-style: none;
 }
+.navbar ul li {
+  position: relative;
+}
 
 .navbar ul li a {
   color: #000;
   text-decoration: none;
+}
+.navbar ul li a svg {
+  font-size: 20px;
 }
 
 .navbar .navbar__serach {
@@ -97,4 +103,25 @@
   .menu__open {
     transform: scaleY(1) !important;
   }
+}
+
+@media screen and (max-width: 600px) {
+  .navbar .navbar__serach {
+    display: none;
+  }
+}
+
+.wishes__count {
+  width: 14px;
+  height: 14px;
+  font-size: 10px;
+  background: #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  color: #fff;
+  position: absolute;
+  top: -4px;
+  right: -4px;
 }
