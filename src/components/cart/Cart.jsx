@@ -30,10 +30,6 @@ const Cart = () => {
   return (
     <>
       <div className="container cart">
-        <div className="url">
-          <Link to={"/"}>Home</Link>/<Link to={"/product-checkout"}>Shop</Link>/
-          <Link to={"/product-cart"}>Shopping Cart</Link>
-        </div>
         {data.length ? (
           <div className="cart__content">
             <table>
@@ -116,11 +112,11 @@ const Cart = () => {
             </div>
           </div>
         ) : (
-          <>
+          <div style={{ margin: "50px" }}>
             <Link className="go__home" to={"/"}>
               Goo Home
             </Link>
-          </>
+          </div>
         )}
       </div>
     </>
