@@ -6,23 +6,23 @@ import { FaRegHeart } from "react-icons/fa6";
 import { FaHeart } from "react-icons/fa6";
 import { addToHeart } from "../../redux/heartSlice";
 
-const Product = ({ data, loading }) => {
-  const heart = useSelector((s) => s.heart.value);
+const Product = ({ data }) => {
+  // const heart = useSelector((s) => s.heart);
   const dispatch = useDispatch();
-  console.log(heart);
+  // console.log(heart);
   const card = data?.map((item) => (
-    <div key={item.id} className="card">
+    <div key={item?.id} className="card">
       <div className="card__img">
-        <Link to={`/product/${item.id}`}>
+        <Link to={`/product/${item?.id}`}>
           <img src={item?.image} alt={item?.title} />
         </Link>
-        <button className="heart">
-          {heart?.some((el) => el.id !== item.id) ? (
+        {/* <button className="heart">
+          {heart?.some((el) => el?.id !== item?.id) ? (
             <FaHeart />
           ) : (
             <FaRegHeart />
           )}
-        </button>
+        </button> */}
       </div>
       <h3 title={item?.title} className="card__title">
         {item?.title}
@@ -33,7 +33,7 @@ const Product = ({ data, loading }) => {
   return (
     <section id="product">
       <div className="container">
-        {loading ? <h1>Loading...</h1> : <div className="wrapper">{card}</div>}
+        <div className="wrapper">{card}</div>
       </div>
     </section>
   );
