@@ -9,8 +9,8 @@ import {
 } from "../../redux/cartSlice";
 import { Link } from "react-router-dom";
 import { toast } from "react-toastify";
-const Cart = ({ data }) => {
-  // let data = useSelector((s) => s.cart.value);
+const Cart = () => {
+  let data = useSelector((s) => s.cart.value);
   let dispatch = useDispatch();
   const [cupon, setCupon] = useState("");
   const [totalCupon, setTotalCupon] = useState(0);
@@ -18,42 +18,6 @@ const Cart = ({ data }) => {
     (acc, el) => acc + Math.round(el.price) * el.soni,
     0
   );
-
-  const card = data?.map((el) => (
-    <tr className="cart__item" key={el.id}>
-      <td>
-        <img src={el?.image} alt={el.title} />
-        <h4 className="title" title={el?.title}>
-          {el?.title}
-        </h4>
-      </td>
-      <td className="price"> $ {Math.round(el?.price)}</td>
-      <td className="qny">
-        <button
-          disabled={el.soni <= 1}
-          onClick={() => dispatch(decrementCartQuantity(el))}
-        >
-          -
-        </button>
-        <span>{el.soni}</span>
-        <button
-          disabled={el.soni >= 10}
-          onClick={() => dispatch(incrementCartQuantity(el))}
-        >
-          +
-        </button>
-      </td>
-      <td className="total">$ {Math.round(el?.price) * el?.soni}</td>
-      <td>
-        <button
-          className="delete"
-          onClick={() => dispatch(removeItemFromCart(el))}
-        >
-          <AiOutlineDelete />
-        </button>
-      </td>
-    </tr>
-  ));
   const handleSubmit = (e) => {
     e.preventDefault();
     if (cupon === "cupon") {
@@ -66,6 +30,10 @@ const Cart = ({ data }) => {
   return (
     <>
       <div className="container cart">
+        <div className="url">
+          <Link to={"/"}>Home</Link>/<Link to={"/product-checkout"}>Shop</Link>/
+          <Link to={"/product-cart"}>Shopping Cart</Link>
+        </div>
         {data.length ? (
           <div className="cart__content">
             <table>
@@ -77,7 +45,43 @@ const Cart = ({ data }) => {
                   <th>Total</th>
                 </tr>
               </thead>
-              <tbody>{card}</tbody>
+              {data?.map((el) => (
+                <tr className="cart__item" key={el.id}>
+                  <td>
+                    <img src={el?.image} alt={el.title} />
+                    <h4 className="title" title={el?.title}>
+                      {el?.title}
+                    </h4>
+                  </td>
+                  <td className="price"> $ {Math.round(el?.price)}</td>
+                  <td className="qny">
+                    <button
+                      disabled={el.soni <= 1}
+                      onClick={() => dispatch(decrementCartQuantity(el))}
+                    >
+                      -
+                    </button>
+                    <span>{el.soni}</span>
+                    <button
+                      disabled={el.soni >= 10}
+                      onClick={() => dispatch(incrementCartQuantity(el))}
+                    >
+                      +
+                    </button>
+                  </td>
+                  <td className="total">
+                    $ {Math.round(el?.price) * el?.soni}
+                  </td>
+                  <td>
+                    <button
+                      className="delete"
+                      onClick={() => dispatch(removeItemFromCart(el))}
+                    >
+                      <AiOutlineDelete />
+                    </button>
+                  </td>
+                </tr>
+              ))}
             </table>
             <div className="cart__total">
               <h4 className="title">Cart Totals</h4>
@@ -113,7 +117,7 @@ const Cart = ({ data }) => {
           </div>
         ) : (
           <>
-            <Link style={{ margin: "50px 0" }} className="go__home" to={"/"}>
+            <Link className="go__home" to={"/"}>
               Goo Home
             </Link>
           </>

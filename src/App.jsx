@@ -21,7 +21,7 @@ const App = () => {
         <Route path={"/login"} element={<Login />} />
         <Route path={"/wishes"} element={<Wishes />} />
         <Route path={"/product-cart"} element={<ProductCard />} />
-        <Route
+        {/* <Route
           path={"*"}
           element={
             <img
@@ -29,7 +29,7 @@ const App = () => {
               style={{ width: "100%" }}
             />
           }
-        />
+        /> */}
       </Routes>
       <Footer />
       <ToastContainer />

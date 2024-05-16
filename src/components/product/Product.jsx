@@ -27,7 +27,7 @@ const Product = ({ data }) => {
           )}
         </button>
         <button
-          className="cart"
+          className="cart__icon"
           onClick={() => {
             dispatch(addToCart(item));
 

@@ -1,10 +1,10 @@
 import React from "react";
-import Cart from "../../components/cart/Cart";
 import { useSelector } from "react-redux";
+import CartSlice from "../../redux/cartSlice";
+import Cart from "../../components/cart/Cart";
 
 const ProductCard = () => {
   let data = useSelector((s) => s.cart.value);
-  console.log(data);
 
   return (
     <>
