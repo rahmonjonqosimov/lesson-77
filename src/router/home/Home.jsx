@@ -8,6 +8,7 @@ import WhatFor from "../../components/what-for/WhatFor";
 import Loading from "../../components/loading/Loading";
 const Home = () => {
   const { data, isLoading } = useGetProductsQuery();
+  console.log(data);
   return (
     <>
       <Hero />
